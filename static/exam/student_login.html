@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Student Login</title>
+    <!--===========bootstrap css==================-->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!--===============custom css==============-->
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="https://kit.fontawesome.com/e6ef8c1f6f.js" crossorigin="anonymous"></script>
+  </head>
+  <body class="color" >
+    <div class="text-center text-white font-weight-bolder mt-5 heading ">
+      <svg viewbox="0 0 100 20">
+        <defs>
+          <linearGradient id="gradient" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="5%" stop-color="white"/>
+            <stop offset="95%" stop-color="whitesmoke"/>
+          </linearGradient>
+          <pattern id="wave" x="0" y="0" width="120" height="20" patternUnits="userSpaceOnUse">
+            <path id="wavePath" d="M-40 9 Q-30 7 -20 9 T0 9 T20 9 T40 9 T60 9 T80 9 T100 9 T120 9 V20 H-40z" mask="url(#mask)" fill="url(#gradient)"> 
+              <animateTransform
+                  attributeName="transform"
+                  begin="0s"
+                  dur="1.5s"
+                  type="translate"
+                  from="0,0"
+                  to="40,0"
+                  repeatCount="indefinite" />
+            </path>
+          </pattern>
+        </defs>
+        <text text-anchor="middle" x="50" y="15" font-size="10" fill="url(#wave)"  fill-opacity="0.6">GIET ONLINE EXAM</text>
+        <text text-anchor="middle" x="50" y="15" font-size="10" fill="url(#gradient)" fill-opacity="0.1">GIET ONLINE EXAM</text>
+      </svg>
+    </div>
+    <main class=" pt-1 pb-5" onload="myFunction()" >
+    <div class="container-fluid" >
+      
+        <!--===============LOGIN==============-->
+        <div class="col-md-6 mx-auto login " >
+          <form class="border needs-validation mt-5 rounded-lg  shadow-lg p-3 mb-5 bg-white rounded "  novalidate>
+            <div class="p-3 ">
+              <div class="wrap">
+                <h1>Login</h1>
+              </div>
+              <div class="form-group pt-3">
+                <label for="exampleInputEmail1">Email address</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="exampleInputEmail1"
+                  aria-describedby="emailHelp"
+                  required
+                />
+                <div class="valid-feedback">
+                  Looks good!
+                </div>
+                <div class="invalid-feedback">
+                  Email Field Cant Be Blank.
+                </div>
+                <small id="emailHelp" class="form-text text-muted"
+                  >Enter Your Email, Name Or Rollno.</small
+                >
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" 
+                value="geeksforgeeks" id="typepass"
+                  class="form-control"
+                  
+                  required
+                />
+                
+                <div class="valid-feedback">
+                  Looks good!
+                </div>
+                <div class="invalid-feedback">
+                  Password Field Cant Be Blank.
+                </div>
+              </div>
+              <div class="form-group form-check">
+               <i onclick="Toggle()" class="fa fa-eye unchecked mr-3"></i>
+               <label for="" >Show Password</label>
+              </div>
+              <div class="d-flex justify-content-around">
+                <button type="submit" class="btn btn-primary  ">Submit</button>
+                <button type="submit" class="btn btn-danger register">Register</button>
+            </div>
+              
+            </div>
+          </form>
+        </div>
+              <!--===============REGISTRATION==============-->
+
+      <div class="col-md-6 mx-auto registration">
+        <form class="border mt-5 mb-5 rounded-lg needs-validation shadow-lg p-5 mb-5 bg-white rounded" novalidate>
+          
+          <div class="wrap">
+            <h1>Registration</h1>
+          </div>
+          <div class="form-row pt-3"> 
+            <div class="form-group col-md-6">
+              <label for="firstname">First Name</label>
+              <input type="text" class="form-control" placeholder="First name" required>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+              <div class="invalid-feedback">
+                Please enter your name.
+              </div>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="lastname">Last Name</label>
+              <input type="text" class="form-control" placeholder="Last name" required>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+              <div class="invalid-feedback">
+                Please enter your last name.
+              </div>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputEmail4">Email</label>
+              <input type="email" class="form-control" id="inputEmail4" required>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+              <div class="invalid-feedback">
+                Please enter your email .
+              </div>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputPassword4">Password</label>
+              <input type="password" class="form-control" id="inputPassword4" required>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+              <div class="invalid-feedback">
+                Please select a password.
+              </div>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="Rollno">Roll No</label>
+              <input type="text" class="form-control" placeholder="Roll No" required>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+              <div class="invalid-feedback">
+                Please enter your roll no.
+              </div>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="RegistationNo">Registation No</label>
+              <input type="text" class="form-control" placeholder="Registation No" required>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+              <div class="invalid-feedback">
+                Please enter your registration no.
+              </div>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="mobileno">Mobile No</label>
+              <input type="text" class="form-control" id="mobileno" required>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+              <div class="invalid-feedback">
+                Please enter your mobile no.
+              </div>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="mobileno">Parent Mobile No</label>
+              <input type="text" class="form-control" id="mobileno" required>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+              <div class="invalid-feedback">
+                Please enter your parent mobile no.
+              </div>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="branch">Branch</label>
+              <select id="inputState" class="form-control">
+                <option selected>Choose branch</option>
+                <option>...</option>
+              </select>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="semistar">Semistar</label>
+              <select id="inputState" class="form-control">
+                <option selected required>Choose Semistar</option>
+                <option>
+                  <ul>
+                    <li>1st</li>
+                    <li>2nd</li>
+                  </ul>
+                </option>
+                </option>
+              </select>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+              <div class="invalid-feedback">
+                Please select your semistar.
+              </div>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary btn-lg btn-block pb-2">Signup</button>
+          <a href="" class="btn btn-info text-white mt-2 ml-5"><i class="fas fa-arrow-circle-left mr-2"></i>Back</a>
+        </form>
+      </div> 
+    </div>
+  </main>
+    <!--===========custom js==================-->
+    <script src="./js/main.js"></script>
+    <!--===========bootstrap js==================-->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+
+
+  </body>
+</html>
+<script>
+  $(document).ready(function(){
+
+  function myFunction() {
+    $(".login").show();
+    $(".registration").hide();
+  }
+  myFunction();
+
+  $('.register').click(function(e){
+    e.preventDefault();
+    $(".registration").show();
+    $(".login").hide();
+});
+});
+
+ // Change the type of input to password or text 
+      function Toggle() { 
+       
+          var temp = document.getElementById("typepass"); 
+          if (temp.type === "password") { 
+              temp.type = "text"; 
+          } 
+          else { 
+              temp.type = "password"; 
+          } 
+      }
+
+</script>

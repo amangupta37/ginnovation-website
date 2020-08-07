@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- ----Font Awesome----- -->
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <!-- ----Google Fonts----- -->
+    <link href="https://fonts.googleapis.com/css?family=Manrope|Montserrat|Raleway&display=swap" rel="stylesheet">
+    <!-- ------css--------- -->
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/blog.css">
+    <title>Blogs-Ginnovation</title>
+   
+  </head>
+  <body>
+      <!-- ---------navbar------------- -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+          <img src="/images/logo.png" height="50" width="200">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item ">
+              <a class="nav-link mr-5" href="http://localhost:5000/dashboard"><i class="fas fa-home mr-2"></i></i> Home</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link mr-5" href="exam/index.html"><i class="fas fa-book-open mr-2"></i></i> Exams</a>
+            </li>
+            <li class="nav-item active" >
+              <a class="nav-link mr-5" href="/users/showblog" ><i class="fas fa-blog mr-2"></i> DISPLAY Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mr-5" href="mentorpage.html"><i class="fas fa-chalkboard-teacher mr-2"></i> Mentors</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mr-5" href="#"
+                ><i class="fas fa-comments mr-2"></i>Chat
+              </a>
+            </li>
+            <li class="nav-item dropdown mr-5">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-users mr-2"></i>Teams
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="teamudan.html">Team Udaan</a>
+                <a class="dropdown-item" href="#">Team Alfa</a>
+                <a class="dropdown-item" href="#">Robo Fighters</a>
+                <a class="dropdown-item" href="#">Team Udaan</a>
+                <a class="dropdown-item" href="#">Team Alfa</a>
+                <a class="dropdown-item" href="#">Robo Fighters</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown mr-5">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-info mr-2"></i>More
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="alumnipage.html">Alumni</a>
+                <a class="dropdown-item" href="facultyadvisors.html">Faculty Advisors/Mentors</a>
+                <a class="dropdown-item" href="developerspage.html">Developers</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="about.html">About Us</a>
+              </div>
+            </li>
+            
+  
+          </ul>
+        </div>
+      </nav>
+  
+    <br><br>
+
+
+
+
+    <!-- Contact page -->
+	<section class="page-warp contact-page">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8">
+					<div class="section-title">
+            <% if (bmessage !=''){%>
+            <div class="alert alert-success">
+              <strong>Congratulations !</strong> <%= bmessage %>
+            </div>
+            <% } %>
+
+						<h2>WRITE YOUR BLOG</h2>
+					</div>
+          <form class="comment-form" action="/users/writeblog" method="POST">
+          
+						<div class="row">
+							<div class="col-md-6">
+								<input type="text" placeholder="Your Name" id="username" name="username"  required >
+							</div>
+							<div class="col-md-6">
+								<input type="text" placeholder="Your Roll_no" id="rollno" name="rollno"  required>
+							</div>
+							<div class="col-md-12">
+								<input type="text" placeholder="TOPIC " id="topic" name="topic"  required>
+								<textarea placeholder="CONTENT" id="content" name="content"  required></textarea>
+                <button class="site-btn sb-dark" type="submit">SEND <i class="fa fa-angle-double-right"></i></button>
+              
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="col-lg-4">
+					
+			
+				</div>
+			</div>
+		</div>
+	</section><br><br><br><br>
+  <!-- Contact page end-->
+  
+   
+   
+
+  </body>
+  </html>
+  
+
+  

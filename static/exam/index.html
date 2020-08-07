@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Collapsible sidebar using Bootstrap 4</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+      integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+      crossorigin="anonymous"
+    />
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css" />
+    <!-- Scrollbar Custom CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css"
+    />
+
+    <!-- Font Awesome JS -->
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
+      integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
+      integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <div class="wrapper">
+
+      <!-- Page Content  -->
+      <div id="content" onload="myFunction()">
+        <nav class="navbar navbar-expand-lg navbar-light color shadow">
+          <div class="container">
+            <button
+              type="button"
+              id="sidebarCollapse"
+              class="btn bg-white shadow-lg"
+            >
+              <i class="fas fa-bars"></i>
+            </button>
+            <div class="mx-auto font">
+              <h2>GIET ONLINE EXAM</h2>
+            </div>
+            <div class="pt-md-0 pt-3 pl-5">
+              <div class="row ">
+                <div class="col ">
+                  <a href="student_login.html"><button type="button" class="btn button1 btn-success">
+                    Student LogIn
+                  </button></a>
+                </div>
+                <div class="col">
+                  <a href="teacher_login.html"><button type="button" class="btn button2 btn-success">
+                    Teacher LogIn
+                  </button></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+        <div id="dashboard-box">
+          <div class=" mx-auto col-md-10 shadow p-3 text-center ">
+            <h4>Overal Statistics</h4>
+
+            <div class="row pt-md-0 pt-3">
+              <div class="col-md-3 col-sm-10 mx-auto pt-3 pt-md-2">
+                <div id="circle"></div>
+
+                <h5>
+                  <i class="fas fa-arrow-alt-circle-right text-info"></i>Enroll
+                  Exam
+
+                  <span class="badge badge-pill badge-info">3</span>
+                </h5>
+              </div>
+              <div class="col-md-3 col-sm-10 mx-auto pt-3 pt-md-2">
+                <div id="circle1"></div>
+                <h5>
+                  <i class="fas fa-check-circle text-success"></i>Pass
+                  <span class="badge badge-pill badge-success">1</span>
+                </h5>
+              </div>
+              <div class="col-md-3 col-sm-10 mx-auto pt-3 pt-md-2">
+                <div id="circle2"></div>
+                <h5>
+                  <i class="fas fa-times-circle text-danger"></i> Faild
+                  <span class="badge badge-pill badge-danger">2</span>
+                </h5>
+              </div>
+            </div>
+          </div>
+
+          <div class="line"></div>
+          <div class="table-responsive ">
+            <span class="mb-2">
+              <h3>Test</h3>
+              <p>Running And Complited Test</p>
+            </span>
+            <table class="table">
+              <thead class="thead-dark">
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Date</th>
+                  <th scope="col">Subject</th>
+                  <th scope="col">Examinor</th>
+                  <th scope="col">Topic</th>
+                  <th scope="col">Start</th>
+                  <th scope="col">End</th>
+                  <th scope="col">Time</th>
+                  <th scope="col">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>12-1-2020</td>
+                  <td>food</td>
+                  <td>bandana mallick</td>
+                  <td>module-1</td>
+                  <td>sat/12:30</td>
+                  <td>sat/1:0</td>
+                  <td>30min</td>
+                  <td>
+                    <button class="btn btn-warning shadow text-white">
+                      <i class="fas fa-arrow-right "></i> Enroll Exam
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td>19-1-2020</td>
+                  <td>food</td>
+                  <td>bandana mallick</td>
+                  <td>module-1</td>
+                  <td>sat/12:30</td>
+                  <td>sat/1:0</td>
+                  <td>30min</td>
+                  <td>
+                    <button class="btn btn-success shadow">
+                      <i class="fas fa-hourglass-start"></i> Start Exam
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td>25-1-2020</td>
+                  <td>food</td>
+                  <td>bandana mallick</td>
+                  <td>module-1</td>
+                  <td>sat/12:30</td>
+                  <td>sat/1:0</td>
+                  <td>30min</td>
+                  <td>
+                    <button class="btn btn-danger shadow">
+                      <i class="fas fa-check-circle text-white"></i> complited
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="line"></div>
+        <!--=============start question bank============-->
+        <div class="question-bank">
+          <div class="mx-auto">
+            <button
+              type="button"
+              class="btn btn-primary mt-2 mt-lg-0 ml-3 shadow"
+            >
+              Subject-1
+            </button>
+            <button
+              type="button"
+              class="btn btn-secondary mt-2 mt-lg-0 ml-3 shadow"
+            >
+              Subject-2
+            </button>
+            <button
+              type="button"
+              class="btn btn-success mt-2 mt-lg-0 ml-3 shadow"
+            >
+              Subject-3
+            </button>
+            <button
+              type="button"
+              class="btn btn-danger mt-2 mt-lg-0 ml-3 shadow"
+            >
+              Subject-4
+            </button>
+            <button
+              type="button"
+              class="btn btn-warning mt-2 mt-lg-0 ml-3 shadow"
+            >
+              Subject-5
+            </button>
+            <button
+              type="button"
+              class="btn text-white color2 mt-2 mt-lg-0 ml-3 shadow"
+            >
+              Subject-6
+            </button>
+          </div>
+          <div class="row">
+            <div class="col-md-4 col-sm-12 pt-3">
+              <div class="card shadow">
+                <h5 class="card-header color text-white">Subject :- EME</h5>
+                <div class="card-body">
+                  <h5 class="card-title">
+                    Lorem, ipsum dolor sit amet
+                  </h5>
+                  <p class="card-text">
+                    With supporting text below as a natural lead-in to
+                    additional content.
+                  </p>
+                  <a href="#" class="btn text-white color2"
+                    >View Question Bank</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-12 pt-3">
+              <div class="card shadow">
+                <h5 class="card-header color text-white">Subject :- EME</h5>
+                <div class="card-body">
+                  <h5 class="card-title">
+                    Lorem, ipsum dolor sit amet
+                  </h5>
+                  <p class="card-text">
+                    With supporting text below as a natural lead-in to
+                    additional content.
+                  </p>
+                  <a href="#" class="btn text-white color2"
+                    >View Question Bank</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-12 pt-3">
+              <div class="card shadow">
+                <h5 class="card-header color text-white">Subject :- EME</h5>
+                <div class="card-body">
+                  <h5 class="card-title">
+                    Lorem, ipsum dolor sit amet
+                  </h5>
+                  <p class="card-text">
+                    With supporting text below as a natural lead-in to
+                    additional content.
+                  </p>
+                  <a href="#" class="btn text-white color2"
+                    >View Question Bank</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-12 pt-3">
+              <div class="card shadow">
+                <h5 class="card-header color text-white">Subject :- EME</h5>
+                <div class="card-body">
+                  <h5 class="card-title">
+                    Lorem, ipsum dolor sit amet
+                  </h5>
+                  <p class="card-text">
+                    With supporting text below as a natural lead-in to
+                    additional content.
+                  </p>
+                  <a href="#" class="btn text-white color2"
+                    >View Question Bank</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-12 pt-3">
+              <div class="card shadow">
+                <h5 class="card-header color text-white">Subject :- EME</h5>
+                <div class="card-body">
+                  <h5 class="card-title">
+                    Lorem, ipsum dolor sit amet
+                  </h5>
+                  <p class="card-text">
+                    With supporting text below as a natural lead-in to
+                    additional content.
+                  </p>
+                  <a href="#" class="btn text-white color2"
+                    >View Question Bank</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-12 pt-3">
+              <div class="card shadow">
+                <h5 class="card-header color text-white">Subject :- EME</h5>
+                <div class="card-body">
+                  <h5 class="card-title">
+                    Lorem, ipsum dolor sit amet
+                  </h5>
+                  <p class="card-text">
+                    With supporting text below as a natural lead-in to
+                    additional content.
+                  </p>
+                  <a href="#" class="btn text-white color2"
+                    >View Question Bank</a
+                  >
+                </div>
+              </div>
+            </div>
+            <!--==================end question bank==============-->
+            <div class="line"></div>
+            <!--=============start question bank============-->
+            <div class="table-responsive ">
+              <span class="mb-2">
+                <h3>Complited Exam</h3>
+              </span>
+              <table class="table">
+                <thead class="thead-dark">
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Subject</th>
+                    <th scope="col">Examinor</th>
+                    <th scope="col">Topic</th>
+                    <th scope="col">Start</th>
+                    <th scope="col">End</th>
+                    <th scope="col">Time</th>
+                    <th scope="col">Action</th>
+                    <th scope="col">View Answer</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>12-1-2020</td>
+                    <td>food</td>
+                    <td>bandana mallick</td>
+                    <td>module-1</td>
+                    <td>sat/12:30</td>
+                    <td>sat/1:0</td>
+                    <td>30min</td>
+                    <td>
+                      <button class="btn btn-danger shadow">
+                        <i class="fas fa-check-circle text-white"></i> complited
+                      </button>
+                    </td>
+                    <td>
+                      <button class="btn btn-secondary shadow text-white">
+                        <i class="fas fa-eye "></i> 
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>19-1-2020</td>
+                    <td>food</td>
+                    <td>bandana mallick</td>
+                    <td>module-1</td>
+                    <td>sat/12:30</td>
+                    <td>sat/1:0</td>
+                    <td>30min</td>
+                    <td>
+                      <button class="btn btn-danger shadow">
+                        <i class="fas fa-check-circle text-white"></i> complited
+                      </button>
+                      <td>
+                        <button class="btn btn-secondary shadow text-white">
+                          <i class="fas fa-eye "></i> 
+                        </button>
+                      </td>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>25-1-2020</td>
+                    <td>food</td>
+                    <td>bandana mallick</td>
+                    <td>module-1</td>
+                    <td>sat/12:30</td>
+                    <td>sat/1:0</td>
+                    <td>30min</td>
+                    <td>
+                      <button class="btn btn-danger shadow">
+                        <i class="fas fa-check-circle text-white"></i> complited
+                      </button>
+                      <td>
+                        <button class="btn btn-secondary shadow text-white">
+                          <i class="fas fa-eye "></i> 
+                        </button>
+                      </td>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <!--=============End start question bank============-->
+          
+           <!--=============End start question bank============-->
+           <div class="col-md-12">
+            <nav aria-label="breadcrumb" class="shadow mt-3 text-white">
+              <ol class="breadcrumb  color">
+                <li class="breadcrumb-item "><a href="#">Home</a></li>
+                <li class="breadcrumb-item text-white active" aria-current="page">Settings</li>
+              </ol>
+            </nav>
+             <!--============card1==================-->
+            <div class="pb-2">
+              <div class="card shadow">
+              <div  class="card-body" data-toggle="collapse" data-target="#demo1"><h5><i class="fas fa-angle-double-right mr-4"></i>Overview</h5></button>
+                <div id="demo1" class="collapse show">
+                  <div class="pt-5">
+                    <div class="card">
+                      <div class="card-header">Details</div>
+                      <div class="card-body">
+                        <div class="row">
+                          <div class="col-md-6">
+                           <p>name: spandan joshi</p> 
+                            <p>Roll No: 17ECE037</p> 
+                            <p>Registration No: 1701210007</p> 
+                            <p>Branch: ECE</p> 
+                            
+                          </div>
+                          <div class="col-md-6 mt-2 mt-md-0">
+                           <p>Semistar: 6th</p> 
+                           <p>Mobile No: 9348982470</p> 
+                           <p>Parents Mob No:</p> 
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+             </div>
+           </div>
+          <!--=======card2================-->
+          <div class="pb-2">
+            <div class="card shadow">
+            <div  class="card-body" data-toggle="collapse" data-target="#demo2"><h5><i class="fas fa-user-edit mr-4"></i>Update Details</h5></div>
+              <div id="demo2" class="collapse ">
+                <div class="p-4  inner">
+                  <form>
+                    <div class="form-row">
+                      
+                      <div class="form-group col-md-6">
+                        <label for="firstname">First Name</label>
+                        <input type="text" class="form-control" placeholder="First name">
+                      </div>
+                      <div class="form-group col-md-6">
+                        <label for="lastname">Last Name</label>
+                        <input type="text" class="form-control" placeholder="Last name">
+                      </div>
+                      <div class="form-group col-md-6">
+                        <label for="inputEmail4">Email</label>
+                        <input type="email" class="form-control" id="inputEmail4">
+                      </div>
+                      <div class="form-group col-md-6">
+                        <label for="inputPassword4">Password</label>
+                        <input type="password" class="form-control" id="inputPassword4">
+                      </div>
+                      <div class="form-group col-md-6">
+                        <label for="Rollno">Roll No</label>
+                        <input type="text" class="form-control" placeholder="Roll No">
+                      </div>
+                      <div class="form-group col-md-6">
+                        <label for="RegistationNo">Registation No</label>
+                        <input type="text" class="form-control" placeholder="Registation No">
+                      </div>
+                    </div>
+                    
+                    
+                    <div class="form-row">
+                      <div class="form-group col-md-6">
+                        <label for="mobileno">Mobile No</label>
+                        <input type="text" class="form-control" id="mobileno">
+                      </div>
+                      <div class="form-group col-md-6">
+                        <label for="mobileno">Parent Mobile No</label>
+                        <input type="text" class="form-control" id="mobileno">
+                      </div>
+                      <div class="form-group col-md-6">
+                        <label for="branch">Branch</label>
+                        <select id="inputState" class="form-control">
+                          <option selected>Choose branch</option>
+                          <option>...</option>
+                        </select>
+                      </div>
+                      <div class="form-group col-md-6">
+                        <label for="semistar">Semistar</label>
+                        <select id="inputState" class="form-control">
+                          <option selected>Choose Semistar</option>
+                          <option>...</option>
+                        </select>
+                      </div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-info btn-lg btn-block text-white">Update</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+           </div>
+         
+          <!--=======card3================-->
+          <div class="pb-2">
+            <div class="card shadow">
+            <div  class="card-body" data-toggle="collapse" data-target="#demo3"><h5><i class="fas fa-key mr-4"></i>Change Password</h5></div>
+              <div id="demo3" class="collapse">
+                <div class="p-5">
+                  <form>
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">New Password</label>
+                      <input type="password" class="form-control" id="exampleInputPassword1">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword2">New Password</label>
+                      <input type="password" class="form-control" id="exampleInputPassword1">
+                    </div>
+                    <button type="submit" class="btn btn-info btn-lg btn-block text-white">Change Password</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+           </div>
+         
+          
+          <!--=============End start question bank============-->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="js/circle-progress.js"></script>
+    <!-- Popper.JS -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+      integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Bootstrap JS -->
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+      integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+      crossorigin="anonymous"
+    ></script>
+    <!-- jQuery Custom Scroller CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $("#sidebar").mCustomScrollbar({
+          theme: "minimal"
+        });
+
+        $("#sidebarCollapse").on("click", function() {
+          $("#sidebar, #content").toggleClass("active");
+          $(".collapse.in").toggleClass("in");
+          $("a[aria-expanded=true]").attr("aria-expanded", "false");
+        });
+      });
+    </script>
+    <script>
+      $("#circle").circleProgress({
+        value: 1,
+        size: 100,
+        thickness: 10,
+        fill: {
+          gradient: ["#2980b9", "#3498db"]
+        }
+      });
+      $("#circle1").circleProgress({
+        value: 0.35,
+        size: 100,
+        thickness: 10,
+        fill: {
+          gradient: ["#27ae60", "#2ecc71"]
+        }
+      });
+
+      $("#circle2").circleProgress({
+        value: 0.75,
+        size: 100,
+        thickness: 10,
+        animation: { duration: 1500, easing: "circleProgressEasing" },
+        fill: {
+          gradient: ["#c0392b", "#e74c3c"]
+        }
+      });
+    </script>
+    <script>
+      function myFunction() {
+        $("#dashboard-box").show();
+        $(".question-bank").hide();
+      }
+      function home() {
+        $("#dashboard-box").show();
+        $(".question-bank").hide();
+      }
+      function qbank() {
+        $.ajax({
+          url:"",
+          data:"",
+          success: function(){
+                    window.location.href = "abcd.html"
+              }
+          })
+      }
+     
+    </script>
+  </body>
+</html>
