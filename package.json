@@ -11,7 +11,11 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn format"
+    }
+  },
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
