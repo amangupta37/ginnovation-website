@@ -9,6 +9,10 @@ const User = require('../models/User');
 
 const UsersModel = require('../models/Blog');
 
+// publish blog
+
+const Publish = require('../models/Pblog');
+
 const {render} = require('ejs');
 
 //blogs
@@ -87,6 +91,27 @@ router.get('/delete/:id', function (req, res) {
     }
   });
 });
+
+//show publisged blog
+router.get('/showpublish',(req, res) => {
+
+
+  Publish.find(function(err,recent) {
+    if(err){
+      console.log(err);
+    }
+    else{
+      res.render('showpublish',{pnblog:recent});
+      console.log(recent);
+    }
+
+  })
+
+
+});
+
+
+
 
 //register handler
 router.post('/register', (req, res) => {
