@@ -1,0 +1,86 @@
+
+    
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <h2>PUBLISHED BLOGS</h2>
+
+  
+   
+    
+  
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Author name</th>
+        <th>Rollno</th>
+        <th>Date of Publish</th>
+        <th>Topic</th>
+       <th>image</th>
+       <th>Operations</th>
+      </tr>
+    </thead>
+    <tbody>
+        <% pnblog.forEach(function(pndata){   %>
+            <tr>
+
+                <td><%= pndata.authorname  %></td>
+                <td><%= pndata.userid  %></td>
+                <td><%= pndata.pdate  %></td>
+                <td><%= pndata.ftopic  %></td>
+                
+                <td>
+                  <% if(pndata.image){ %>
+                  <img src="uploads/<%= pndata.image %>" alt="profile image">
+                  <% } %>
+                 
+
+
+                </td>
+               
+               
+                <td>
+
+                   
+                    <a href="/users/deletep/<%= pndata._id  %>">Delete</a><br>
+                  
+
+                </td>
+                
+            </tr>
+        <% }) %>
+      
+    </tbody>
+  </table> 
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
