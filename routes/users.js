@@ -93,25 +93,16 @@ router.get('/delete/:id', function (req, res) {
 });
 
 //show publisged blog
-router.get('/showpublish',(req, res) => {
-
-
-  Publish.find(function(err,recent) {
-    if(err){
+router.get('/showpublish', (req, res) => {
+  Publish.find(function (err, recent) {
+    if (err) {
       console.log(err);
-    }
-    else{
-      res.render('showpublish',{pnblog:recent});
+    } else {
+      res.render('showpublish', {pnblog: recent});
       console.log(recent);
     }
-
-  })
-
-
+  });
 });
-
-
-
 
 //register handler
 router.post('/register', (req, res) => {
@@ -201,8 +192,6 @@ router.get('/logout', (req, res) => {
   res.redirect('/users/login');
 });
 
-module.exports = router;
-
 //write blog
 
 router.post('/writeblog', function (req, res, next) {
@@ -225,68 +214,48 @@ router.post('/writeblog', function (req, res, next) {
   });
 });
 
-module.exports = router;
-
 //image upload path
 
-router.use(express.static(__dirname+"./public/"));
+// router.use(express.static(__dirname + './public/'));
 
-var Storage= multer.diskStorage({
-  destination:"./public/uploads/",
-  filename:(req,file,cb)=>{
-    cb(null,file.fieldname+"_"+Date.now()+path.extname(file.originalname));
-  }
+var Storage = multer.diskStorage({
+  destination: '../static/uploads/',
+  filename: (req, file, cb) => {
+    cb(
+      null,
+      file.fieldname + '_' + Date.now() + path.extname(file.originalname)
+    );
+  },
 });
 
 var upload = multer({
-  storage:Storage
+  storage: Storage,
 }).single('file');
-
 
 // Publish blog
 
-router.post('/publishblog',upload, function(req, res, next) {
-  
+router.post('/publishblog', upload, function (req, res, next) {
   console.log(req.body);
-  
 
   const myblogdata = {
-      authorname: req.body.authorname,
-      userid: req.body.userid,
-      pdate: req.body.pdate,
-      readtime: req.body.readtime,
-      ftopic: req.body.ftopic,
-      fcontent: req.body.fcontent,
-      image:req.file.filename,
-
-  }
+    authorname: req.body.authorname,
+    userid: req.body.userid,
+    pdate: req.body.pdate,
+    readtime: req.body.readtime,
+    ftopic: req.body.ftopic,
+    fcontent: req.body.fcontent,
+    image: req.file.filename,
+  };
   var fdata = Publish(myblogdata);
   //var data = UsersModel(req.body);
   console.log(fdata);
-  fdata.save(function(err) {      
-
-      if (err) {
-
-          res.render('publishblog', { smessage: 'NOT successfuly Published'});
-         
-         
-  
-      } else {
-
-          res.render('publishblog', { smessage: 'Successfuly  Published'});
-          
-      }
-  })
-
-
+  fdata.save(function (err) {
+    if (err) {
+      res.render('publishblog', {smessage: 'NOT successfuly Published'});
+    } else {
+      res.render('publishblog', {smessage: 'Successfuly  Published'});
+    }
+  });
 });
 
-
-
-
-
-
-
-
-
-
+module.exports = router;
